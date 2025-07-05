@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>The Model</title>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/model.css') }}">
+</head>
+<body>
+    <header class="top-page">
+        <nav>
+            <img src="{{ url_for('static', filename='images/simplemug2.png') }}" class="header-icon">
+                <div class = "logo">O<span class="logo-highlighted">MNI</span>SYNC</div>
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+        </nav>
+    </header>
+    
+    
+    {% if disp_images %}
+    <div class = "section-1">
+            <div class="gallery-container">
+                <div class="gallery-slide">
+                        
+                    {% for url in slice_image_urls %}
+                        <img id="slice-image" src="{{ url }}" alt="2D Slice">
+                    {% endfor %}
+                    
+                </div>
+            </div>
+            {% if show_normalized_label %}
+                <h2 class = "norm-status-label">normalized</h2>
+            {% else %}
+                <h2 class = "norm-status-label">original</h2>
+            {% endif %}
+            <button class="prev" onclick="slide(-1)">&#10094;</button>
+            <button class="next" onclick="slide(1)">&#10095;</button>
+        </div>
+    {% else %}
+        <div class = "section-1">
+            <h2 class = "upper-padding">Upload a File</h2>
+            
+            <p class = "subtitle">Submit nifti files and select parameters for normalization</p>
+        </div>
+    {% endif %}
+    
+    
+    
+    
+    
+    <div class = "form-container">
+        <div class = "file-management-container">
+         
+         
+        <div class = "uploaded-files-container">
+            <h3 class = "uploaded-files-title">FILES</h3>
+            <div class="uploaded-files-list-container">
+                
+                <div>
+                    {% if uploaded_files %}
+                    <ul>
+                        {% for file in uploaded_files %}
+                        <li>{{ file }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <h3>NO SUBJECT INFORMATION AVAILABLE AT THIS TIME</h3>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        <div class = "upload-container">
+            <h3 class = "tools-title">TOOLS</h3>
+                <form id = "file-upload-form" method="post" action="/upload" enctype="multipart/form-data">
+                    <input id="file-upload" type="file" name="files" multiple style="display: none;" onchange="checkAndSubmit()"  required>
+                    <button type="submit" class = "upload-button" onclick="triggerFileUpload()">Upload Files</button>
+                </form>
+                <form method="post" action="/reset">
+                    <button id = "files-uploaded" type="submit" class="reset-button">Reset Uploads</button>
+                </form>
+                
+                <form method="post" action="/random_crop">
+                    <button  class="crop-button">Random Crop</button>
+                </form>
+                
+                
+                <div class = "parameters-container">
+                    <button class = "parameter-button">Option 1</button>
+                    <button class = "parameter-button">Option 2</button>
+                    <button class = "parameter-button">Option 3</button>
+                </div>
+                
+                <div class = "register-button-container">
+                    <form method="post" action="/normalize" enctype="multipart/form-data" onsubmit="return validate_norm_form()">
+                        <button class = "register-button"><div class = button-text>Normalize</div></button>
+                    </form>
+                </div>
+
+                    <form method="post" action="/downloads">
+                            <button class = "download-button">Download</button>
+                    </form>         
+                
+                
+        </div>
+        
+        </div>
+    
+    </div>
+    
+    
+
+    
+    <div class="progress-bar-container">
+        <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
+    
+    
+    
+    
+    
+    <script>
+       // Save the scroll position before the form is submitted
+       window.addEventListener("beforeunload", function() {
+           sessionStorage.setItem("scrollPosition", window.scrollY);
+       });
+
+       // Restore the scroll position after the page reloads
+       window.addEventListener("load", function() {
+           const scrollPosition = sessionStorage.getItem("scrollPosition");
+           if (scrollPosition !== null) {
+               window.scrollTo(0, scrollPosition);
+           }
+       });
+    </script>
+    <footer>
+        <p>&copy; 2024 omniSYNC. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

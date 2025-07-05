@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMNISYNC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="top-page">
+        <nav>
+            <img src="{{ url_for('static', filename='images/simplemug2.png') }}" class="header-icon">
+            <div class = "logo">O<span class="logo-highlighted">MNI</span>SYNC</div>
+            <a href="/model">Model</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+        </nav>
+    </header>
+    <main>
+        <div class="section-0">
+        </div>
+        <div class="section-1">
+            <div class = "section-1-left-text">
+                <p class="subtitle">A Foundation Model for Neuroimaging Spatial Normalization</p>
+                <hr class="subtitle-line">
+                <div class="text-container">
+                    <p>A state-of-the-art model for rapid, multimodal registration of patient images. High performance for clinical and research purposes.</p>
+                    <p class="highlighted-text">Press the button below to begin.</p>
+                </div>
+            </div>
+            <div class="right-container">
+                <img src="{{ url_for('static', filename='images/mni.png') }}" class="photo-slot">
+                    <img src="{{ url_for('static', filename='images/diff2.png') }}" class="photo-slot">
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="/model" class="my-button-link">
+                <button class="my-button">Begin Normalizing</button>
+            </a>
+        </div>
+        
+        
+        <div class="section-2">
+            <h2 class="section-title">A Crucial Tool In Your AI Portfolio</h2>
+            <hr class="section-line">
+            <div class="features-container">
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/s2-icon1.png') }}" alt="Icon 1" class="feature-icon">
+                    <h3>Increase workflow efficiency</h3>
+                    <p>Potential to reduce wait time for common registration tasks, and increase analytical capacity for research and clinical environments</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/s2-icon2.png') }}" alt="Icon 2" class="feature-icon">
+                    <h3>Optimize image resolution</h3>
+                    <p>Maintain diagnostic confidence even on suboptimal patient scans.</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/s2-icon3.png') }}" alt="Icon 3" class="feature-icon">
+                    <h3>Better patient experience</h3>
+                    <p>100% of patients surveyed said they preferred a shorter exam time, especially those undergoing repeat exams.</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/s2-icon4.png') }}" alt="Icon 4" class="feature-icon">
+                    <h3>Extend Scanner Life</h3>
+                    <p>Delay the purchase of expensive scanners by virtually upgrading your existing fleet with the latest technology.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-3">
+            <p color = "#FFFFFF">section 3</p>
+        </div>
+        
+        
+    </main>
+    <script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
+    <footer>
+        <p>&copy; 2024 omniSYNC. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
