@@ -5,6 +5,15 @@ This module includes many files I've worked on that I feel like I've contributed
 It does not encompass all coding/debugging/studying/miscellaneous work I have done with the preproc C++ source code or other files.
 Enjoy. 
 
+OLD_PROCESSING_SCRIPTS:
+Early tasks I did for Yongkai. Can treat this as a misc folder. 
+
+ONLINE_SPATIAL_NORM_PROTOTYPE:
+Second iteration of our working online normalizer to demonstrate what our final open source model will look like as a tool with UI. 
+
+
+
+OUTDATED--------->>>>>>>>>
 DL_Model_2 -> current attempts to use pytorch, monai, and various other softwares to develop a single modality AI model for image nonrigid spatial normalization. Also includes working reorientation, resampling, and padding for preprocessing before the nn does its thing. Hope to eventually extrapolate this project into multimodality, widespread use. 
 
 apply_inverse_def_PYTHON.ipynb -> This is python code I wrote that performs the spatial normalization that spm preproc does. However, I did not use bsplines or optimization that spm had, only mimicked it with simple algebra. The point of this exercise was to understand the math behind the classical registration and run it successfully with python
