@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>About</title>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body>
+    <div class = "top-page">
+        <a href="/"  style="margin-right: 20px;">Home</a>
+        <a href="/model">Model</a>
+        <a href="/resources">Resources</a>
+    </div>
+    <h1>About</h1>
+    <img src="{{ url_for('static', filename='images/mug.png') }}" class="portrait">
+    <p>omniSYNC is a multimodal normalization model created at CAFN at Stanford University by Dr. Yongkai Liu.</p>
+    <p>Image Registration in Medical Imaging
+    Image registration is a critical process in the field of medical imaging, where the goal is to align two or more images of the same scene taken at different times, from different viewpoints, or by different sensors. This alignment is essential for accurate analysis and interpretation of medical images, especially in the diagnosis, treatment planning, and monitoring of various diseases.
+
+    Understanding Spatial Normalization
+    Spatial normalization is a specific type of image registration used in neuroimaging, particularly in studies involving magnetic resonance imaging (MRI). The process involves transforming individual brain images to a standard coordinate space, such as the Montreal Neurological Institute (MNI) space, to allow for comparison across different subjects. This step is crucial for group analyses, where data from multiple subjects are aggregated and analyzed statistically.
+
+    Types of Image Registration
+    Rigid Registration:
+
+    In rigid registration, the alignment involves only translations and rotations. This method is appropriate when the images to be registered have the same shape and size, such as aligning a pre- and post-contrast MRI of the same patient.
+    Affine Registration:
+
+    Affine registration allows for scaling and shearing in addition to translation and rotation. It is useful in cases where slight differences in image size and orientation are expected, such as when images are acquired from different scanners.
+    Non-Rigid Registration:
+
+    Also known as deformable registration, this approach is used when images have complex differences due to factors like patient movement, changes in anatomy, or differences in imaging protocols. Non-rigid registration algorithms allow for local deformations, making them suitable for aligning images of organs that change shape, like the brain or the heart.
+    Algorithms for Image Registration
+    Intensity-Based Methods:
+
+    These methods rely on the intensity values of the pixels or voxels in the images. The most common approach involves optimizing a similarity metric, such as mutual information or cross-correlation, to find the transformation that best aligns the images.
+    Feature-Based Methods:
+
+    Feature-based methods identify key points or landmarks in the images, such as corners, edges, or specific anatomical landmarks. The transformation is then determined by matching these features between the images. This approach is often used in combination with intensity-based methods for increased robustness.
+    Machine Learning and Deep Learning Approaches:
+
+    Recent advances in machine learning have led to the development of models that can learn to predict the optimal transformation for image registration. Convolutional neural networks (CNNs) and variational autoencoders (VAEs) have been employed to learn deformation fields that align images in an unsupervised manner. These models are particularly valuable in scenarios where traditional registration methods struggle, such as with images that have low contrast or significant noise.
+    Challenges in Image Registration
+    Despite the advancements in image registration techniques, several challenges remain. The variability in image quality, differences in patient anatomy, and the presence of artifacts can all hinder the accuracy of registration. Additionally, the computational complexity of non-rigid registration can make it time-consuming, especially when dealing with large 3D datasets.
+
+    Applications of Image Registration
+    Multimodal Imaging:
+
+    Image registration is crucial in integrating information from different imaging modalities, such as MRI, CT, and PET. By aligning these images, clinicians can better understand the relationships between different tissue types and pathological findings.
+    Longitudinal Studies:
+
+    In studies that track changes in a patient over time, such as monitoring tumor growth or brain atrophy, image registration allows for precise comparison of images taken at different time points.
+    Surgical Planning:
+
+    Accurate image registration is essential for guiding surgical interventions. By registering pre-operative images with intra-operative imaging, surgeons can precisely navigate to the target areas while avoiding critical structures.
+    Conclusion
+    Image registration remains a foundational technique in medical imaging, enabling more accurate diagnoses, better treatment planning, and enhanced research capabilities. As computational power increases and machine learning techniques continue to evolve, the accuracy and speed of image registration will only improve, leading to even more significant advances in the field of medical imaging.
+    </p>
+    
+    
+</body>
+
+</html>
