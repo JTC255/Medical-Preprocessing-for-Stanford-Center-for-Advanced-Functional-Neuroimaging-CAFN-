@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 15px;
+    font-size: 80px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 25px;
+    margin-left: 0px;
+    margin-bottom: 100px;
+}
+
+.portrait {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+p {
+    color: #555;
+    text-align: left;
+    margin-left: 75px;
+}
+
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.my-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon on hover */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Add a hover effect */
+.my-button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+.my-button-link {
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+}
+
+
+.top-page {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
